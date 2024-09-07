@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #666;
+        }
+        
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Trivia Game</h1>
+        <select id="category" name="category">
+            <option value="9">General Knowledge</option>
+            <!-- Other category options -->
+        </select>
+        <select id="difficulty" name="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <button onclick="startQuiz()">Start Quiz</button>
+        <div id="quiz-area">
+            <h2 id="question"></h2>
+            <button onclick="checkAnswer('A')">A</button>
+            <button onclick="checkAnswer('B')">B</button>
+            <button onclick="checkAnswer('C')">C</button>
+            <button onclick="checkAnswer('D')">D</button>
+            <h3 id="answer-result"></h3>
+        </div>
+        <div id="score-area" style="display: none;">
+            <h2>Score: <span id="score"></span></h2>
+            <h3 id="score-result"></h3>
+        </div>
+    </div>
+    <script>
+        let currentQuestionIndex = 0;
+let currentQuestion;
+let currentAnswer;
+let score = 0;
+let totalQuestions = 5;
+let passMark = 2;
+
+function startQuiz() {
+    fetchQuiz();
+}
+
+function fetchQuiz() {
+    let category = document.getElementById("category").value;
+    let difficulty = document.getElementById("difficulty").value;
+
+    fetch(`https://opentdb.com/api.php?amount=${totalQuestions}&category=${category}&difficulty=${difficulty}&type=multiple`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.response_code === 0) {
+                quiz = data.results;
+                currentQuestion = quiz[currentQuestionIndex];
+                showQuestion();
+            } else {
+                alert("Unable to fetch quiz questions.");
+            }
+        });
+}
+
+function showQuestion() {
+    let question = document.getElementById("question");
+    question.textContent = currentQuestion.question;
+
+    let answers = document.getElementsByTagName("button");
+    answers[0].textContent = currentQuestion.correct_answer;
+    answers[1].textContent = currentQuestion.incorrect_answers[0];
+    answers[2].textContent = currentQuestion.incorrect_answers[1];
+    answers[3].textContent = currentQuestion.incorrect_answers[2];
+
+    currentAnswer = currentQuestion.correct_answer;
+}
+
+function checkAnswer(selectedAnswer) {
+    if (selectedAnswer === currentAnswer) {
+        score++;
+    }
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < totalQuestions) {
+        currentQuestion = quiz[currentQuestionIndex];
+        showQuestion();
+    } else {
+        displayScore();
+    }
+}
+
+function displayScore() {
+    document.getElementById("quiz-area").style.display = "none";
+    document.getElementById("score-area").style.display = "block";
+
+    document.getElementById("score").textContent = score;
+
+    if (score >= passMark) {
+        document.getElementById("score-result").textContent = "Congratulations! You have passed the exam.";
+    } else {
+        document.getElementById("score-result").textContent = "U r failed in this exam. Retry after some time.";
+    }
+}
+
+    </script>
+</body>
+</html>

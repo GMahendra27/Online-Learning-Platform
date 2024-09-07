@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+</head>
+
+<body>
+    
+    <div class="navbar">
+            <a href="courses1.php">Courses</a>
+            <a href="about.php">About us</a>
+            <a href="team.html">Our Team</a>
+        <input type="text" id="searchInput" placeholder="Search courses...">
+        <span class="search-icon">🔍</span>
+        <a href="#" class="profile">👤 Profile</a>
+    </div>
+    <h1>About Us</h1>
+    <div id="f">
+        <div class="s">
+        <b style="margin-left: 10px;" >Welcome to CoreTel3</b>,<br> <br>
+            Your premier destination for comprehensive online learning in the real of Computer Science and Engineering (CSE). Our platform is dedicated to empowering learners like you with the skills and knowledge necessary to thrive in the ever-evolving field of technology.
+        </div>
+    </div>
+        
+    <div id="main"> 
+        <div class="q_div">
+            <button id="q" onclick="myFunction()">Our Mission</button>
+            <p id="q_p" style="display: none;">At CoreTel3, our mission is clear: to provide accessible, high-quality education that equips individuals with the expertise needed to excel in the digital era. We are committed to bridging the gap between academic learning and the practical demands of the modern tech industry.</p>
+        </div>  
+            
+            <div id="e_div">
+                <button id="e" onclick="myFunction2()">What we Offer</button>
+                <p id="e_p" style="display: none;">CoreTel3 offers an expansive array of online courses designed to cover a diverse spectrum of topics within the vast landscape of Computer Science and Engineering. From fundamental programming languages to advanced artificial intelligence concepts and cybersecurity techniques, our expertly curated courses cater to learners of all levels, from beginners to seasoned professionals.</p>
+            </div>
+            <div id="r_div">
+                <button id="r" onclick="myFunction3()">Join Us Today</button>
+                <p id="r_p" style="display: none;">Whether you're a student embarking on your educational journey, a professional seeking to upskill, or an enthusiast eager to explore the world of Computer Science and Engineering, we extend an invitation to you. Embark on your learning voyage with CoreTel3, explore our diverse course offerings, and take a confident step towards a promising future in the realm of technology.</p>
+            </div>
+            <div id="w_div">
+                <button id="w" onclick="myFunction1()">Why Choose us</button>
+                <p id="w_p" style="display: none;">Expert Instructors: Our courses are meticulously crafted and instructed by seasoned industry professionals and tech experts. You'll have the privilege of learning from individuals with practical experience and a passion for effective teaching.
+
+                    Flexible Learning: We acknowledge the demands of your busy life. CoreTel3 provides flexible learning options, enabling you to tailor your learning journey to your schedule and pace.
+                    
+                    Practical Focus: Our courses prioritize practical skills and real-world applications. Beyond theoretical understanding, you'll develop the ability to apply your knowledge to tangible projects and challenges.
+                    
+                    Community and Collaboration: Engage with a vibrant community of fellow learners, partake in enriching discussions, and collaborate on stimulating projects. CoreTel3 fosters a supportive environment that encourages networking and shared learning experiences.
+                    
+                    Up-to-Date Content: Technology is in a perpetual state of evolution. Our courses are consistently updated to reflect the latest advancements, ensuring that you remain at the forefront of this rapidly changing field.</p>
+            </div>
+            
+    </div>
+    
+</body>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .navbar {
+        background-color: #333;
+        overflow: hidden;
+        padding: 10px 20px;
+    }
+    .navbar a, .navbar input, .navbar .search-icon {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+        border-radius: 5px;
+    }
+    .navbar .profile {
+        float: right;
+    }
+    .navbar .search-icon {
+        cursor: pointer;
+    }
+    .navbar input {
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+    button{
+        border-radius: 3px;
+    }
+    h1{
+       margin-left: 10px; 
+    }
+    #f{
+        border: #f4f4f4;
+        border-radius: 15px;
+        background-color: antiquewhite;
+        margin-left: 30px;
+        margin-right: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+        padding: 20px;
+    }
+    .s{
+        margin-left: 20px;
+    }
+    button{
+        text-align: center;
+        height: 50px;
+        width: 130px;
+        background-color: black;
+        color: wheat;
+        margin-top: 50px;
+        margin-left: 200px;
+        border-radius: 6px;
+        border-color: wheat;
+    }
+    button:hover{
+        background-color:wheat;
+        color: black;
+        border-color: black ;        
+    }
+    #q_div{
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #w_div{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #main{
+        text-align: center;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    
+
+
+    
+</style>
+<script>
+    function myFunction() {
+        var p=document.getElementById("q_p");
+        if(p.style.display=="none"){
+            p.style.display="flex";
+        }
+        else{
+            p.style.display="none";
+        }
+    }
+    function myFunction1() {
+        var p=document.getElementById("w_p");
+        if(p.style.display=="none"){
+            p.style.display="flex";
+        }
+        else{
+            p.style.display="none";
+        }
+    }
+    function myFunction2() {
+        var p=document.getElementById("e_p");
+        if(p.style.display=="none"){
+            p.style.display="flex";
+        }
+        else{
+            p.style.display="none";
+        }
+    }
+    function myFunction3() {
+        var p=document.getElementById("r_p");
+        if(p.style.display=="none"){
+            p.style.display="flex";
+        }
+        else{
+            p.style.display="none";
+        }
+    }
+    
+</script>
+</html>

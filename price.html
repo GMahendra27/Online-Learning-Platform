@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Online Learning Platform</title>
+    <style>
+        /* Your CSS styles here */
+        /* Reset some default browser styles */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Apply a background color and set text color */
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        /* Style the header */
+        header {
+            background-color: #fff;
+            color: #0078d4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Style the main content */
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Pricing table styles */
+        .pricing-table {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .plan {
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .plan h3 {
+            font-size: 20px;
+        }
+
+        .plan p {
+            font-size: 16px;
+        }
+
+        /* Payment button styles (placeholder) */
+        .payment-button {
+            background-color: #0078d4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .payment-button:hover {
+            background-color: #005ea2;
+        }
+        .navbar {
+    background-color: #333;
+    overflow: hidden;
+    padding: 10px 20px;
+}
+.navbar a, .navbar input, .navbar .search-icon {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.navbar .profile {
+    float: right;
+}
+.navbar .search-icon {
+    cursor: pointer;
+}
+.navbar input {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+    </style>
+</head>
+<body background="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHkAtgMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQIH/8QAFhABAQEAAAAAAAAAAAAAAAAAAAER/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAECBP/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAwDAQACEQMRAD8A63i4quJ0Ji4qqM4Y0CJiY0CphigiYYoCYYoKmGKAAoIKCIlaSisYLRFgsRYCgqoAAAAVFAAAEUBFRQAAURQSpVqUGaFGVhFSKoKgqKqAKIAokUAABFAAAAUAAEqVagIiiKRYzGoFBRUQUAAAAABQQKoAAAgCiKCVFqAyAikaZaCkVFVAAAAAAAAFBAFEAoAKACJVqUGaAjQ0yoy0IKKICKICqIoAAAAAAAAKIAVKoDNBEVI0xGgaEVUARUUAAABUEFEAURQABQABFQEQoyuMStSsRRcbisrGmVEAVUUAQEURQAQVQAAAAAKi1ARFRGn/2Q==">
+  <div class="navbar">
+    <a href="">Home</a>
+        <a href="login.php">Login</a>
+        <a href="courses.php">Courses</a>
+        <a href="about.html">About us</a>
+        
+    <input type="text" id="searchInput" placeholder="Search courses...">
+    <span class="search-icon">🔍</span>
+    <a href="#" class="profile">👤 Profile</a>
+</div>
+<div class="course-search">
+    <input type="text" placeholder="Search for courses...">
+    <button>Search</button>
+</div>
+    <header>
+        <h1>Pricing</h1>
+    </header>
+    
+    <main>
+        <div class="pricing-table">
+            <!-- Pricing Plan 1: Web Technologies -->
+            <div class="plan">
+                <h3>Web Technologies Course</h3>
+                <p>$99<span></span></p>
+            </div>
+
+            <!-- Pricing Plan 2: Machine Learning -->
+            <div class="plan">
+                <h3>Machine Learning Course</h3>
+                <p>$129<span></span></p>
+            </div>
+
+            <!-- Pricing Plan 3: Internet of Things (IoT) -->
+            <div class="plan">
+                <h3>Internet of Things (IoT) Course</h3>
+                <p>$119<span></span></p>
+            </div>
+
+            <div class="plan">
+                <h3>For All the Courses</h3>
+                <p>$200 Only<span></span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Online Learning Platform</p>
+    </footer>
+</body>
+</html>
